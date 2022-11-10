@@ -85,3 +85,23 @@ WHERE
     And l1.Num = l2.Num 
     AND l2.Num = l3.Num
 
+-- (4) Write a query to display the records with consecutive id and the number of people >=100
+
+CREATE TABLE dbo.Stadium
+(
+    id INT NOT NUll PRIMARY KEY,
+    visit_date DATE,
+    people INT NOT NULL
+);
+
+INSERT INTO Stadium
+VALUES
+    (1, '2017-01-01', 10),
+    (2, '2017-01-02',109),
+    (3, '2017-01-03',150),
+    (4, '2017-01-04',99),
+    (5, '2017-01-05',145),
+    (6, '2017-01-06',1455),
+    (7, '2017-01-07',199),
+    (8, '2017-01-09',188)
+SELECT * FROM Stadium
