@@ -103,5 +103,17 @@ VALUES
     (5, '2017-01-05',145),
     (6, '2017-01-06',1455),
     (7, '2017-01-07',199),
-    (8, '2017-01-09',188)
-SELECT * FROM Stadium
+    (8, '2017-01-09',188);
+
+Select DISTINCT(t1.id)
+FROM Stadium t1,
+    Stadium t2,
+    Stadium t3
+WHERE t1.people > 100 AND t2.people > 100 AND t3.people > 100
+    AND
+    (
+    (t1.id - t2.id = 1 AND t2.id - t3.id = 1 AND t1.id - t3.id = 2)
+    OR (t1.id - t2.id = -2 AND t2.id - t3.id = 1 AND t1.id - t3.id = -1)
+    OR (t1.id - t2.id = -1 AND t2.id - t3.id = 2 AND t1.id - t3.id = 1)
+    )
+
